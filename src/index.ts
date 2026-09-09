@@ -1,1 +1,5 @@
-import { } from "node:fs/promises";
+
+// Começsndo com typescript
+
+
+const myName : string = "Mário"
