@@ -23,3 +23,34 @@ const numbers = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5];
 
 const result = numbers.filter(filter);
 console.log(result);
+
+// ////////////////////////////////
+
+// Interfaces
+
+interface UserWallet {
+  coins?: number;
+  credits?: number;
+}
+
+interface User {
+  name: string;
+  createdAt: Date;
+  wallet?: UserWallet;
+}
+
+function createUser(name: string): User {
+  return { name, createdAt: new Date() };
+}
+
+function updateWallet(user: User, wallet: UserWallet) {
+  user.wallet = {
+    ...user.wallet,
+    ...wallet,
+  };
+}
+
+
+const Mario = createUser("Mário");
+
+updateWallet(Mario, { coins: 100, credits: 50 });
